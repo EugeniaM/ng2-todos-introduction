@@ -15,6 +15,11 @@
   (click)="onAddTodo()">
   Add TODO
 </button>
-<p>{{ todoCreated }}</p>
-<app-todo></app-todo>
-<app-todo></app-todo>
+<!--<p>{{ todoCreated }}</p>-->
+<p *ngIf="todoCreated; else noTodo">Todo was added, new todo name: {{ newTodoName }}</p>
+<ng-template #noTodo>
+  <p>No todo was added!</p>
+</ng-template>
+<hr>
+<app-todo *ngFor="let todo of todos"></app-todo>
+<!--<div *ngFor="let todo of todos; let i = index">{{ todo }}, {{ i }}</div>-->

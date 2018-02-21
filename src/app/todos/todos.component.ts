@@ -13,20 +13,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
   disableAddTodo = true;
-  todoCreated = 'Todo was not created';
+  todoCreated = false;
   newTodoName = 'New todo!';
+  todos = ['Learn components!', 'Learn directives!'];
 
   constructor() {
     setTimeout(() => {
       this.disableAddTodo = false;
-    }, 3000);
+    }, 2000);
   }
 
   ngOnInit() {
   }
 
   onAddTodo() {
-    this.todoCreated = `Todo was created with name: ${this.newTodoName}`;
+    this.todoCreated = true;
+    this.todos.push(this.newTodoName);
   }
 
   onUpdateTodoName(event: Event) {

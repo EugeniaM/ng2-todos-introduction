@@ -1,1 +1,5 @@
-<p>Todo: {{ todoItem }}, status: {{ getTodoStatus() }}, time spent: {{ todoTimeSpent }}</p>
+<p
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{done: todoStatus === 'done'}">
+  Todo: {{ todoItem }}, status: {{ getTodoStatus() }}, time spent: {{ todoTimeSpent }}
+</p>
