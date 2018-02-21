@@ -1,3 +1,20 @@
 <h3>This is TODOS Component!</h3>
+<label>Add TODO</label>
+<!--<input-->
+  <!--type="text"-->
+  <!--class="form-control"-->
+  <!--(input)="onUpdateTodoName($event)">-->
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="newTodoName">
+<p>{{ newTodoName }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="disableAddTodo"
+  (click)="onAddTodo()">
+  Add TODO
+</button>
+<p>{{ todoCreated }}</p>
 <app-todo></app-todo>
 <app-todo></app-todo>
