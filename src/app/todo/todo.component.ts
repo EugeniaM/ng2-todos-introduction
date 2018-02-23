@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
     .done {
       color: white;
     }
-  `]
+  `],
+  // encapsulation: ViewEncapsulation.Emulated
+  // encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.Native
 })
 export class TodoComponent {
   todoItem = 'Write Angular App';
